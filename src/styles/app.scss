@@ -1,4 +1,5 @@
 @import "tachyons-ext";
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap");
 
 $body-font: "Fira Sans", Helvetica, Arial, sans-serif;
 $header-font: "Alfa Slab One", serif;
@@ -37,7 +38,19 @@ body {
   }
 }
 
+/* Change only the body font for Persian and Arabic text */
+body:lang(ar),
+body:lang(fa) {
+  font-family: "Vazirmatn", "Vazirmatn";
+  & > main {
+    direction: rtl;
+    text-align: right;
+  }
+}
+
 code {
+  direction: ltr;
+  text-align: left;
   padding: 0.2rem 0.5rem;
   margin: 0 0.2rem;
   font-size: 90%;
@@ -48,6 +61,8 @@ code {
 }
 
 pre > code {
+  direction: ltr;
+  text-align: left;
   display: block;
   white-space: pre;
   width: 100%;
